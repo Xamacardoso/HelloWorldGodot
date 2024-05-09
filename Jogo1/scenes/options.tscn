@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdlg8hu70gs2h"]
+
+[ext_resource type="Script" path="res://scripts/options.gd" id="1_2lkux"]
+[ext_resource type="FontFile" uid="uid://b7w50ja2d7tke" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_p1vyv"]
+[ext_resource type="FontFile" uid="uid://dnrhrtt7qb2go" path="res://assets/fonts/PixelOperator8.ttf" id="3_a2xpn"]
+[ext_resource type="PackedScene" uid="uid://duyhebircyeg7" path="res://scenes/options_tab_container.tscn" id="3_v1aub"]
+
+[node name="Options_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2lkux")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Options" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -30
+
+[node name="Options_Title" type="Label" parent="MarginContainer/Options"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_p1vyv")
+theme_override_font_sizes/font_size = 24
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[node name="Options_Tab_Container" parent="MarginContainer/Options" instance=ExtResource("3_v1aub")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Back_to_Menu" type="Button" parent="MarginContainer/Options"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_a2xpn")
+theme_override_font_sizes/font_size = 16
+text = "BACK"

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bm24ni23wuvbw"]
+
+[node name="Pause_Screen" type="CanvasLayer"]
+
+[node name="Pause_Container" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Pause_Container"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Button2" type="Button" parent="Pause_Container"]
+layout_mode = 2
+text = "Options"
+
+[node name="Button3" type="Button" parent="Pause_Container"]
+layout_mode = 2
+text = "Main Menu"

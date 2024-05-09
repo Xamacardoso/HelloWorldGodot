@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://epctbksy5aq8"]
+
+[ext_resource type="Script" path="res://scripts/global.gd" id="1_cjf4k"]
+[ext_resource type="AudioStream" uid="uid://dbissup368lsp" path="res://assets/music/Wherever I May Roam 8-Bit (192 kbps).mp3" id="2_mba61"]
+
+[node name="Global" type="Node"]
+script = ExtResource("1_cjf4k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_mba61")
+bus = &"BGM"

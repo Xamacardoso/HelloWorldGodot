@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://vvrct2xb16qy"
+path="res://.godot/imported/Fight Fire With Fire 8-Bit (192 kbps).mp3-8968cd83fc5e3816c4d2194ea7f107e4.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Fight Fire With Fire 8-Bit (192 kbps).mp3"
+dest_files=["res://.godot/imported/Fight Fire With Fire 8-Bit (192 kbps).mp3-8968cd83fc5e3816c4d2194ea7f107e4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

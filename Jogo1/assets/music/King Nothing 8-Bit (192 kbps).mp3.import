@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cvhk0tjvjpa0d"
+path="res://.godot/imported/King Nothing 8-Bit (192 kbps).mp3-b1b42be9ad29b6b8658c41e242e776b5.mp3str"
+
+[deps]
+
+source_file="res://assets/music/King Nothing 8-Bit (192 kbps).mp3"
+dest_files=["res://.godot/imported/King Nothing 8-Bit (192 kbps).mp3-b1b42be9ad29b6b8658c41e242e776b5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

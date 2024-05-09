@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d040a242a7x1q"]
+
+[ext_resource type="AudioStream" uid="uid://dbissup368lsp" path="res://assets/music/Wherever I May Roam 8-Bit (192 kbps).mp3" id="1_iypx2"]
+
+[node name="GameplayMusic" type="AudioStreamPlayer2D"]
+position = Vector2(57, 20)
+stream = ExtResource("1_iypx2")
+autoplay = true
+max_distance = 99999.0
+panning_strength = 0.0
+bus = &"BGM"
