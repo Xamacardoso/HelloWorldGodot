@@ -10,7 +10,7 @@ func _ready() -> void:
 ## User save data
 var userdata := {
 'coin_count' : 0,
-'last_level' : 'res://scenes/world2.tscn'
+'last_level' : 'res://scenes/world3.tscn'
 }
 
 ## Saves the game
@@ -33,6 +33,11 @@ func load_game():
 
 ## All levels, its music, its name and scene file path
 var levels := {
+	'main_menu' : {
+		'name' : 'world1',
+		'music' : preload("res://assets/music/Metallica - The Day That Never Comes 8-bit (128 kbps)CUT.mp3"),
+		'scene' : preload("res://scenes/main_menu.tscn"),
+	},
 	'world1' : {
 		'name' : 'world1',
 		'music' : preload("res://assets/music/Wherever I May Roam 8-Bit (192 kbps).mp3"),
@@ -40,12 +45,12 @@ var levels := {
 	},
 	'world2' : {
 		'name' : 'world2',
-		'music' : preload("res://assets/music/King Nothing 8-Bit (192 kbps).mp3"),
+		'music' : preload("res://assets/music/King Nothing 8-Bit (192 kbps)CUT.mp3"),
 		'scene' : preload("res://scenes/world2.tscn"),
 	},
 	'world3' : {
 		'name' : 'world3',
-		'music' : preload("res://assets/music/One 8-Bit (192 kbps).mp3"),
+		'music' : preload("res://assets/music/Sad But True 8-Bit (192 kbps)CUT.mp3"),
 		'scene' : preload("res://scenes/world3.tscn"),
 	}
 }
@@ -66,4 +71,7 @@ func play_music(music) -> void:
 	audio_stream_player.stream = music
 	audio_stream_player.play()
 
+## Stops any music playing
+func stop_music() -> void:
+	audio_stream_player.stop()
 

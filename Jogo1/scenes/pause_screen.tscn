@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bm24ni23wuvbw"]
 
 [ext_resource type="Script" path="res://scripts/pause_screen.gd" id="1_vwkws"]
-[ext_resource type="Theme" path="res://assets/themes/pause_screen.tres" id="2_30tmw"]
+[ext_resource type="Theme" uid="uid://dmuwbtgltyaar" path="res://assets/themes/pause_screen.tres" id="2_30tmw"]
 [ext_resource type="PackedScene" uid="uid://cdlg8hu70gs2h" path="res://scenes/options.tscn" id="3_fibr3"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_anh2c"]

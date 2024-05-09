@@ -2,6 +2,8 @@ class_name MainMenu
 
 extends Control
 
+@export var my_name : String
+
 @onready var main_menu_container = $MarginContainer
 @onready var name_edit : LineEdit = %Name_Edit
 
@@ -15,6 +17,11 @@ extends Control
 func _ready():
 	options_menu.visible = false
 	handle_connecting_signals()
+	# If isn't playing any music, picks the music for the main menu.
+	if not Global.audio_stream_player.playing:
+		Global.play_music_from_level(my_name)
+		print('Playing music')
+
 
 # Changes the button indicator according to the focus
 func _process(delta):
@@ -28,6 +35,7 @@ func change_button_indicator():
 ## New Game
 func on_new_game_pressed():
 	save_player_name()
+	Global.stop_music()
 	get_tree().change_scene_to_file("res://scenes/world1.tscn")
 
 func save_player_name():
@@ -36,18 +44,21 @@ func save_player_name():
 ## Load game
 func on_load_game_pressed():
 	save_player_name()
+	Global.stop_music()
 	Global.load_game()
 	print(Global.userdata['last_level'])
 	get_tree().change_scene_to_file(Global.userdata['last_level'])
 
 ## Options
 func on_options_button_pressed():
+	print("Abrindo menu de opções.")
 	main_menu_container.visible = false
 	options_menu.set_process(true)
 	options_menu.visible = true
 	name_edit.visible = false
 
 func on_exit_options_menu():
+	print("Saindo do menu de opções.")
 	options_menu.visible = false
 	main_menu_container.visible = true
 	name_edit.visible = true
