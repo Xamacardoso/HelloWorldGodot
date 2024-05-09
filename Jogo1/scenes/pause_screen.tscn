@@ -1,19 +1,72 @@
-[gd_scene format=3 uid="uid://bm24ni23wuvbw"]
+[gd_scene load_steps=6 format=3 uid="uid://bm24ni23wuvbw"]
+
+[ext_resource type="Script" path="res://scripts/pause_screen.gd" id="1_vwkws"]
+[ext_resource type="Theme" path="res://assets/themes/pause_screen.tres" id="2_30tmw"]
+[ext_resource type="PackedScene" uid="uid://cdlg8hu70gs2h" path="res://scenes/options.tscn" id="3_fibr3"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_anh2c"]
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_42v0h"]
+events = [SubResource("InputEventKey_anh2c")]
 
 [node name="Pause_Screen" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_vwkws")
 
-[node name="Pause_Container" type="VBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="BG_overlay" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.196078)
 
-[node name="Button" type="Button" parent="Pause_Container"]
+[node name="Screens" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pause_Container" type="VBoxContainer" parent="Screens"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -52.0
+offset_right = 66.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(66, 52)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Resume" type="Button" parent="Screens/Pause_Container"]
 layout_mode = 2
+theme = ExtResource("2_30tmw")
+shortcut = SubResource("Shortcut_42v0h")
 text = "Resume"
 
-[node name="Button2" type="Button" parent="Pause_Container"]
+[node name="Options" type="Button" parent="Screens/Pause_Container"]
 layout_mode = 2
+theme = ExtResource("2_30tmw")
 text = "Options"
 
-[node name="Button3" type="Button" parent="Pause_Container"]
+[node name="Main_Menu" type="Button" parent="Screens/Pause_Container"]
 layout_mode = 2
+theme = ExtResource("2_30tmw")
 text = "Main Menu"
+
+[node name="Options_Menu" parent="Screens" instance=ExtResource("3_fibr3")]
+layout_mode = 1
+
+[connection signal="pressed" from="Screens/Pause_Container/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Screens/Pause_Container/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Screens/Pause_Container/Main_Menu" to="." method="_on_main_menu_pressed"]

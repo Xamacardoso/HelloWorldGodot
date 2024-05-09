@@ -12,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vrthl")
+my_name = "main_menu"
 new_game_button = NodePath("MarginContainer/MainMenu_Container/NewGame")
 load_game_button = NodePath("MarginContainer/MainMenu_Container/LoadGame")
 options_button = NodePath("MarginContainer/MainMenu_Container/Options")
