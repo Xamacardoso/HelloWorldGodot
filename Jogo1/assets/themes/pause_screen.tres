@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dmuwbtgltyaar"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dmuwbtgltyaar"]
 
 [ext_resource type="FontFile" uid="uid://dnrhrtt7qb2go" path="res://assets/fonts/PixelOperator8.ttf" id="1_1a62m"]
 
@@ -40,6 +40,44 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 anti_aliasing = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_koevw"]
+content_margin_left = 4.0
+content_margin_top = 8.0
+content_margin_right = 4.0
+content_margin_bottom = 8.0
+bg_color = Color(0.141176, 0.141176, 0.141176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcr72"]
+content_margin_left = 4.0
+content_margin_top = 8.0
+content_margin_right = 4.0
+content_margin_bottom = 8.0
+bg_color = Color(0.141176, 0.141176, 0.141176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0.59, 0.511333, 0, 0.223529)
+shadow_size = 1
+shadow_offset = Vector2(-1, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gt3d3"]
+bg_color = Color(0.141176, 0.141176, 0.141176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 4.0
+expand_margin_top = 8.0
+expand_margin_right = 4.0
+expand_margin_bottom = 8.0
+
 [resource]
 Button/colors/font_focus_color = Color(0.909804, 0.909804, 0, 1)
 Button/colors/font_hover_color = Color(0.909804, 0.909804, 0, 1)
@@ -50,3 +88,7 @@ Button/styles/focus = SubResource("StyleBoxFlat_je6a2")
 Button/styles/hover = SubResource("StyleBoxFlat_0pran")
 Button/styles/normal = SubResource("StyleBoxFlat_g7m4i")
 Button/styles/pressed = SubResource("StyleBoxFlat_1l57p")
+LineEdit/fonts/font = ExtResource("1_1a62m")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_koevw")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_rcr72")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_gt3d3")

@@ -19,6 +19,14 @@ config/icon="res://icon.svg"
 
 Global="*res://scenes/global.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+
+[dotnet]
+
+project/assembly_name="Jogo1"
+
 [editor]
 
 movie_writer/movie_file="C:/Users/xamazin1/OneDrive/Área de Trabalho/Godot/projetos/Jogo1/teste.mp4"
@@ -51,3 +59,5 @@ pause_back={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

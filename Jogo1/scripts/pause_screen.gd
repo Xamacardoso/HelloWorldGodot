@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var options_menu : Control = screensNode.get_node("Options_Menu")
 
 @onready var resume : Button = $Screens/Pause_Container/Resume
+@onready var main_menu_button : Button = $Screens/Pause_Container/Main_Menu
 @onready var options_menu_back : Button = $Screens/Options_Menu/MarginContainer/Options/Back_to_Menu
 
 
@@ -12,8 +13,12 @@ func _ready() -> void:
 	visible = false
 	options_menu.visible = false
 	
+	# Connect the main menu signal
+	main_menu_button.button_down.connect(_on_main_menu_pressed)
+	
 	# Conectar sinal de retorno do menu de opções
 	options_menu_back.button_down.connect(_backToPauseMenu)
+	
 	
 func _backToPauseMenu():
 	# Tornar todas as telas invisíveis, exceto a principal.
@@ -40,4 +45,6 @@ func _on_options_pressed() -> void:
 	
 ## On main menu button pressed
 func _on_main_menu_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().paused = false
+	get_tree().change_scene_to_file('res://scenes/main_menu.tscn')
+	
