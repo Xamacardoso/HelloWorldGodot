@@ -17,15 +17,19 @@ extends Control
 func _ready():
 	options_menu.visible = false
 	handle_connecting_signals()
+	set_process(true)
 	# If isn't playing any music, picks the music for the main menu.
-	if not Global.audio_stream_player.playing:
+	if Global.audio_stream_player.finished or not Global.audio_stream_player.playing:
 		Global.play_music_from_level(my_name)
 		print('Playing music')
 
 
 # Changes the button indicator according to the focus
-func _process(delta):
+func _process(_delta):
 	change_button_indicator()
+	if not Global.audio_stream_player.playing:
+		Global.play_music_from_level(my_name)
+		print('Playing music again...')
 	
 func change_button_indicator():
 	pass

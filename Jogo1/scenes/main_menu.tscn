@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgyfh67ghtys3"]
+[gd_scene load_steps=5 format=3 uid="uid://cgyfh67ghtys3"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_vrthl"]
-[ext_resource type="FontFile" uid="uid://dnrhrtt7qb2go" path="res://assets/fonts/PixelOperator8.ttf" id="2_6xyqu"]
+[ext_resource type="Texture2D" uid="uid://r62guamy4dms" path="res://assets/sprites/menu_background.png" id="2_ciost"]
+[ext_resource type="Theme" uid="uid://dmuwbtgltyaar" path="res://assets/themes/pause_screen.tres" id="2_dxphb"]
 [ext_resource type="PackedScene" uid="uid://cdlg8hu70gs2h" path="res://scenes/options.tscn" id="2_obca0"]
 
 [node name="Control" type="Control" node_paths=PackedStringArray("new_game_button", "load_game_button", "options_button", "exit_button")]
@@ -17,6 +18,11 @@ new_game_button = NodePath("MarginContainer/MainMenu_Container/NewGame")
 load_game_button = NodePath("MarginContainer/MainMenu_Container/LoadGame")
 options_button = NodePath("MarginContainer/MainMenu_Container/Options")
 exit_button = NodePath("MarginContainer/MainMenu_Container/Exit")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.600556, 0.600556)
+texture = ExtResource("2_ciost")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -35,6 +41,7 @@ custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+theme = ExtResource("2_dxphb")
 theme_override_constants/separation = 5
 
 [node name="Name_Edit" type="LineEdit" parent="MarginContainer/MainMenu_Container"]
@@ -44,10 +51,9 @@ layout_direction = 1
 layout_mode = 2
 size_flags_vertical = 2
 size_flags_stretch_ratio = 1.51
-theme_override_colors/font_color = Color(1, 0.933333, 0, 0.647059)
+theme_override_colors/font_color = Color(1, 0.933333, 0, 0.772549)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.0941176)
 theme_override_constants/minimum_character_width = 1
-theme_override_fonts/font = ExtResource("2_6xyqu")
 theme_override_font_sizes/font_size = 24
 placeholder_text = "Enter your name"
 alignment = 1
@@ -56,26 +62,22 @@ caret_blink = true
 [node name="NewGame" type="Button" parent="MarginContainer/MainMenu_Container"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_6xyqu")
 text = "New Game
 "
 
 [node name="LoadGame" type="Button" parent="MarginContainer/MainMenu_Container"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_6xyqu")
 text = "Load Game"
 
 [node name="Options" type="Button" parent="MarginContainer/MainMenu_Container"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_6xyqu")
 text = "Options"
 
 [node name="Exit" type="Button" parent="MarginContainer/MainMenu_Container"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_6xyqu")
 text = "Exit to Desktop"
 
 [node name="Options_Menu" parent="." instance=ExtResource("2_obca0")]

@@ -1,16 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdlg8hu70gs2h"]
+[gd_scene load_steps=5 format=3 uid="uid://cdlg8hu70gs2h"]
 
 [ext_resource type="Script" path="res://scripts/options.gd" id="1_2lkux"]
-[ext_resource type="FontFile" uid="uid://b7w50ja2d7tke" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_p1vyv"]
-[ext_resource type="FontFile" uid="uid://dnrhrtt7qb2go" path="res://assets/fonts/PixelOperator8.ttf" id="3_a2xpn"]
 [ext_resource type="PackedScene" uid="uid://duyhebircyeg7" path="res://scenes/options_tab_container.tscn" id="3_v1aub"]
 
-[sub_resource type="InputEventKey" id="InputEventKey_p2ixh"]
+[sub_resource type="InputEventKey" id="InputEventKey_edwsd"]
 device = -1
 keycode = 4194305
 
-[sub_resource type="Shortcut" id="Shortcut_01eoh"]
-events = [SubResource("InputEventKey_p2ixh")]
+[sub_resource type="Shortcut" id="Shortcut_ls5h5"]
+events = [SubResource("InputEventKey_edwsd")]
 
 [node name="Options_Menu" type="Control"]
 layout_mode = 3
@@ -41,7 +39,6 @@ theme_override_constants/separation = -30
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("1_p1vyv")
 theme_override_font_sizes/font_size = 24
 text = "OPTIONS"
 horizontal_alignment = 1
@@ -56,9 +53,10 @@ custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("3_a2xpn")
 theme_override_font_sizes/font_size = 16
-shortcut = SubResource("Shortcut_01eoh")
+action_mode = 0
+shortcut = SubResource("Shortcut_ls5h5")
 text = "BACK"
 
 [connection signal="button_down" from="MarginContainer/Options/Back_to_Menu" to="." method="_on_back_to_menu_button_down"]
+[connection signal="pressed" from="MarginContainer/Options/Back_to_Menu" to="." method="_on_back_to_menu_pressed"]
